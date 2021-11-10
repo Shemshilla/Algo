@@ -1,0 +1,37 @@
+package T_C;
+
+import java.util.Scanner;
+
+public class OMG {
+	static Scanner scan = new Scanner(System.in);
+	public static void main(String args[])
+	{
+		System.out.print("Введите координаты первой вершины треугольника по оси х: ");
+		double x1 = scan.nextDouble();
+		System.out.print("Введите координаты первой вершины треугольника по оси y: ");
+		double y1 = scan.nextDouble();
+		System.out.print("Введите координаты второй вершины треугольника по оси х: ");
+		double x2 = scan.nextDouble();		
+		System.out.print("Введите координаты второй вершины треугольника по оси y: ");
+		double y2 = scan.nextDouble();
+		System.out.print("Введите координаты третьей вершины треугольника по оси х: ");
+		double x3 = scan.nextDouble();
+		System.out.print("Введите координаты третьей вершины треугольника по оси y: ");
+		double y3 = scan.nextDouble();
+		double a = Math.sqrt((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        double b = Math.sqrt((x1 - x3) * (x1 - x3) + (y1 - y3) * (y1 - y3));
+        double c = Math.sqrt((x2 - x3) * (x2 - x3) + (y2 - y3) * (y2 - y3));
+        if (a + b <= c || a + c <= b || a + c <= b)
+            System.out.println("Треугольник не существует");
+        else
+        {
+            double p = (a + b + c) / 2.0;
+            double square = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+            double r = square/p;
+            double d = Math.PI * (r * r);
+            System.out.println("Площадь круга, вписанного в треугольник: " + d);
+            double P= Math.PI * 2*r;
+    		System.out.println("Длина окружности, вписанной в треугольник равна: " + P);
+            }			
+    }
+}
