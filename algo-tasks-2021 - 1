@@ -1,0 +1,16 @@
+package Circle;
+
+import java.util.Scanner;
+
+public class CircleProgram {
+	static Scanner scan = new Scanner(System.in);
+	public static void main(String args[])
+	{
+		System.out.print("Введите радиус круга: ");
+		double radius = scan.nextDouble();
+		double a = Math.PI * (radius * radius);
+		System.out.println("Площадь круга равна: " + a);
+		double b= Math.PI * 2*radius;
+		System.out.println("Длины окружности равна: " + b);
+	}	
+}
